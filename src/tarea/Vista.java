@@ -5,6 +5,8 @@
  */
 package tarea;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author david
@@ -14,8 +16,10 @@ public class Vista extends javax.swing.JFrame {
     /**
      * Creates new form Vista
      */
+   
     public Vista() {
         initComponents();
+      
     }
 
     /**
@@ -27,21 +31,84 @@ public class Vista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        btnCalcular = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        txtNumeroP = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtTablas = new javax.swing.JTextArea();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel1.setText("Bienvenido a las tablas :");
+
+        btnCalcular.setText("Calcular tabla");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        jLabel2.setText("Ingresa el numero a calcular:");
+
+        txtTablas.setColumns(20);
+        txtTablas.setRows(5);
+        jScrollPane1.setViewportView(txtTablas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(165, 165, 165)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCalcular)
+                            .addComponent(txtNumeroP, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(35, 35, 35)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(txtNumeroP, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(btnCalcular)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+int numero = Integer.parseInt(txtNumeroP.getText()); 
+
+    for(int j = 1; j <= 10; j++)
+            {
+                txtTablas.append(numero + " X " + j + " = " + numero*j + "\n");
+              
+            }
+    
+
+    }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +146,11 @@ public class Vista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCalcular;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField txtNumeroP;
+    private javax.swing.JTextArea txtTablas;
     // End of variables declaration//GEN-END:variables
 }
