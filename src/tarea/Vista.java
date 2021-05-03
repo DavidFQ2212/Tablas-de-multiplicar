@@ -100,12 +100,16 @@ public class Vista extends javax.swing.JFrame {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
 int numero = Integer.parseInt(txtNumeroP.getText()); 
-
+if (numero <= 10){
     for(int j = 1; j <= 10; j++)
             {
                 txtTablas.append(numero + " X " + j + " = " + numero*j + "\n");
-              
             }
+}else{
+    JOptionPane.showMessageDialog(null,"error es mayor a 10 ingresa de nuevo otro numero");
+}
+    
+            
     
 
     }//GEN-LAST:event_btnCalcularActionPerformed
